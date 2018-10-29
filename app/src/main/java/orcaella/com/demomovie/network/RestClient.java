@@ -39,19 +39,19 @@ public class RestClient {
 
 
     public interface ApiService {
-        @GET(ApiURL.LIST_MOVIE_POPULAR)
+        @GET(ApiUrl.LIST_MOVIE_POPULAR)
         Call<MovieList> getPopularMovie(@Query("api_key") String api_key, @Query("page") int page);
 
-        @GET(ApiURL.LIST_MOVIE_TOP_RATED)
+        @GET(ApiUrl.LIST_MOVIE_TOP_RATED)
         Call<MovieList> getTopRated(@Query("api_key") String api_key, @Query("page") int page);
 
-        @GET(ApiURL.LIST_MOVIE_UP_COMING)
+        @GET(ApiUrl.LIST_MOVIE_UP_COMING)
         Call<MovieList> getFavorite(@Query("api_key") String api_key, @Query("page") int page);
 
-        @GET(ApiURL.LIST_GENRE)
+        @GET(ApiUrl.LIST_GENRE)
         Call<GenreList> getGenreList(@Query("api_key") String api_key);
 
-        @GET(ApiURL.LIST_MOVIE_DETAIL)
+        @GET(ApiUrl.LIST_MOVIE_DETAIL)
         Call<MovieDetail> getMovieDetail(@Path("movie_id") int movieID, @Query("api_key") String api_key);
 
 
