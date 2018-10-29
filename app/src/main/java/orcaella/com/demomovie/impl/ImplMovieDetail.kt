@@ -4,13 +4,13 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.OnLifecycleEvent
-import orcaella.com.demomovie.model.MovieDetailModel
+import orcaella.com.demomovie.model.MovieDetail
 import orcaella.com.demomovie.network.requestx.RequestCallBack
 import orcaella.com.demomovie.network.requestx.RequestMovieDetail
 import orcaella.com.demomovie.presenter.PresenterMovieDetail
 import orcaella.com.demomovie.viewHelper.ViewHelperDetail
 
-class ImplMovieDetail(private val viewHelper: ViewHelperDetail, val movieID: Int): PresenterMovieDetail, LifecycleObserver, RequestCallBack<MovieDetailModel> {
+class ImplMovieDetail(private val viewHelper: ViewHelperDetail, val movieID: Int): PresenterMovieDetail, LifecycleObserver, RequestCallBack<MovieDetail> {
 
     private val requestMovieDetail = RequestMovieDetail()
 
@@ -36,7 +36,7 @@ class ImplMovieDetail(private val viewHelper: ViewHelperDetail, val movieID: Int
         requestMovieDetail.requestApi()
     }
 
-    override fun onRequestSuccess(response: MovieDetailModel) {
+    override fun onRequestSuccess(response: MovieDetail) {
         viewHelper.hideLoading()
         viewHelper.showMovieDetail(response)
     }

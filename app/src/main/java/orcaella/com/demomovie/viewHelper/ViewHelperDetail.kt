@@ -1,7 +1,6 @@
 package orcaella.com.demomovie.viewHelper
 
-import orcaella.com.demomovie.model.MovieDetailModel
-import java.util.ArrayList
+import orcaella.com.demomovie.model.MovieDetail
 
 interface ViewHelperDetail {
     fun showLoading()
@@ -10,5 +9,5 @@ interface ViewHelperDetail {
 
     fun showError(message: String)
 
-    fun showMovieDetail(movie: MovieDetailModel)
+    fun showMovieDetail(movie: MovieDetail)
 }

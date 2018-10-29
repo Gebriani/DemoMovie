@@ -1,6 +1,6 @@
 package orcaella.com.demomovie.viewHelper
 
-import orcaella.com.demomovie.model.MovieModel
+import orcaella.com.demomovie.model.Movie
 import java.util.ArrayList
 
 interface ViewHelperMovieList {
@@ -14,7 +14,7 @@ interface ViewHelperMovieList {
 
     fun showError(message: String)
 
-    fun showMovieList(list: ArrayList<MovieModel>)
+    fun showMovieList(list: ArrayList<Movie>)
 
     fun removeAllList()
 }

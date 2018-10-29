@@ -10,7 +10,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_movie_list.*
 import orcaella.com.demomovie.R
 import orcaella.com.demomovie.impl.ImplMovieList
-import orcaella.com.demomovie.model.MovieModel
+import orcaella.com.demomovie.model.Movie
 import orcaella.com.demomovie.presenter.PresenterMovieList
 import orcaella.com.demomovie.ui.adapter.MovieListAdapter
 import orcaella.com.demomovie.viewHelper.ViewHelperMovieList
@@ -32,7 +32,7 @@ class MovieListFragment : Fragment(), ViewHelperMovieList {
         }
     }
 
-    var movieList = ArrayList<MovieModel>()
+    var movieList = ArrayList<Movie>()
     var type: Int = TYPE_POPULAR
     lateinit var adapter: MovieListAdapter
     lateinit var presenter: PresenterMovieList
@@ -73,7 +73,7 @@ class MovieListFragment : Fragment(), ViewHelperMovieList {
 
     }
 
-    override fun showMovieList(list: ArrayList<MovieModel>) {
+    override fun showMovieList(list: ArrayList<Movie>) {
         movieList.addAll(list)
         adapter.notifyDataSetChanged()
     }

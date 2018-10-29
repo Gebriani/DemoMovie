@@ -4,7 +4,7 @@ import android.arch.lifecycle.Lifecycle
 import android.arch.lifecycle.LifecycleObserver
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.OnLifecycleEvent
-import orcaella.com.demomovie.model.MovieListResponse
+import orcaella.com.demomovie.model.MovieList
 import orcaella.com.demomovie.network.requestx.RequestCallBack
 import orcaella.com.demomovie.network.requestx.RequestFavoriteMovieList
 import orcaella.com.demomovie.network.requestx.RequestPopularMovieList
@@ -12,7 +12,7 @@ import orcaella.com.demomovie.network.requestx.RequestTopRatedMovieList
 import orcaella.com.demomovie.presenter.PresenterMovieList
 import orcaella.com.demomovie.viewHelper.ViewHelperMovieList
 
-class ImplMovieList(private val viewHelper: ViewHelperMovieList, val type: Int) : PresenterMovieList, LifecycleObserver, RequestCallBack<MovieListResponse> {
+class ImplMovieList(private val viewHelper: ViewHelperMovieList, val type: Int) : PresenterMovieList, LifecycleObserver, RequestCallBack<MovieList> {
     companion object {
         const val TYPE_POPULAR = 0
         const val TYPE_TOP_RATED = 1
@@ -71,7 +71,7 @@ class ImplMovieList(private val viewHelper: ViewHelperMovieList, val type: Int) 
         }
     }
 
-    override fun onRequestSuccess(response: MovieListResponse) {
+    override fun onRequestSuccess(response: MovieList) {
         viewHelper.hideLoading()
         viewHelper.hideRefreshLoading()
         viewHelper.removeAllList()

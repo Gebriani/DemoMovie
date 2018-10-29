@@ -9,10 +9,10 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.adapter_movie_item.view.*
 import orcaella.com.demomovie.R
-import orcaella.com.demomovie.model.MovieModel
+import orcaella.com.demomovie.model.Movie
 import orcaella.com.demomovie.ui.DetailActivity
 
-class MovieListAdapter(val context: Context, val movieList: ArrayList<MovieModel>) : RecyclerView.Adapter<MovieListAdapter.MovieListViewHolder>() {
+class MovieListAdapter(val context: Context, val movieList: ArrayList<Movie>) : RecyclerView.Adapter<MovieListAdapter.MovieListViewHolder>() {
     val basePath = "https://image.tmdb.org/t/p/w500/"
 
     override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MovieListViewHolder {

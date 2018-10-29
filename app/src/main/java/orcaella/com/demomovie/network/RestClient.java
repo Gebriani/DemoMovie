@@ -5,15 +5,13 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import orcaella.com.demomovie.BuildConfig;
-import orcaella.com.demomovie.model.GenreListReponse;
-import orcaella.com.demomovie.model.MovieDetailModel;
-import orcaella.com.demomovie.model.MovieListResponse;
-import orcaella.com.demomovie.model.MovieModel;
+import orcaella.com.demomovie.model.GenreList;
+import orcaella.com.demomovie.model.MovieDetail;
+import orcaella.com.demomovie.model.MovieList;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
-import retrofit2.http.PATCH;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
@@ -42,19 +40,19 @@ public class RestClient {
 
     public interface ApiService {
         @GET(ApiURL.LIST_MOVIE_POPULAR)
-        Call<MovieListResponse> getPopularMovie(@Query("api_key") String api_key, @Query("page") int page);
+        Call<MovieList> getPopularMovie(@Query("api_key") String api_key, @Query("page") int page);
 
         @GET(ApiURL.LIST_MOVIE_TOP_RATED)
-        Call<MovieListResponse> getTopRated(@Query("api_key") String api_key, @Query("page") int page);
+        Call<MovieList> getTopRated(@Query("api_key") String api_key, @Query("page") int page);
 
         @GET(ApiURL.LIST_MOVIE_UP_COMING)
-        Call<MovieListResponse> getFavorite(@Query("api_key") String api_key, @Query("page") int page);
+        Call<MovieList> getFavorite(@Query("api_key") String api_key, @Query("page") int page);
 
         @GET(ApiURL.LIST_GENRE)
-        Call<GenreListReponse> getGenreList(@Query("api_key") String api_key);
+        Call<GenreList> getGenreList(@Query("api_key") String api_key);
 
         @GET(ApiURL.LIST_MOVIE_DETAIL)
-        Call<MovieDetailModel> getMovieDetail(@Path("movie_id") int movieID, @Query("api_key") String api_key);
+        Call<MovieDetail> getMovieDetail(@Path("movie_id") int movieID, @Query("api_key") String api_key);
 
 
 

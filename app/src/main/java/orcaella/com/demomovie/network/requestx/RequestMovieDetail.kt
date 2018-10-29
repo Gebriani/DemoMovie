@@ -1,9 +1,9 @@
 package orcaella.com.demomovie.network.requestx
 
 import orcaella.com.demomovie.Constant
-import orcaella.com.demomovie.model.MovieDetailModel
+import orcaella.com.demomovie.model.MovieDetail
 
-class RequestMovieDetail: BaseRequest<MovieDetailModel>(){
+class RequestMovieDetail: BaseRequest<MovieDetail>(){
 
     var movie_id = 0
 

@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_detail_movie.*
 import orcaella.com.demomovie.R
 import orcaella.com.demomovie.impl.ImplMovieDetail
-import orcaella.com.demomovie.model.MovieDetailModel
+import orcaella.com.demomovie.model.MovieDetail
 import orcaella.com.demomovie.presenter.PresenterMovieDetail
 import orcaella.com.demomovie.viewHelper.ViewHelperDetail
 
@@ -50,7 +50,7 @@ class DetailActivity: BaseActivity(), ViewHelperDetail {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
-    override fun showMovieDetail(movie: MovieDetailModel) {
+    override fun showMovieDetail(movie: MovieDetail) {
 
         Glide.with(this)
                 .load(basePath + movie.poster_path)
